@@ -3,6 +3,8 @@ Tree
 The goal of this project is to demonstrate how to use ReentrantReadWriteLock and mutual excluse lock to accecss shared
 resources.
 
+You will need Java 11 and maven 3 to run the code.
+
 Question:
 -
 In a concurrent environment, one job is building (expanding) a tree data structure, where all other jobs are dumping periodically the current number of nodes. 
