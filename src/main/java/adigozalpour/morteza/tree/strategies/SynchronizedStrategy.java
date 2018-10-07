@@ -47,4 +47,9 @@ public class SynchronizedStrategy<T> extends AbstractTreeManipulatorStrategy<T> 
     protected synchronized void doActionOnParent( Optional<Node<T>> parent, Consumer<Node<T>> consumer ) {
         super.doActionOnParent( parent, consumer );
     }
+
+    @Override
+    public synchronized int calculateCount() {
+        return super.calculateCount();
+    }
 }

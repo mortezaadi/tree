@@ -58,4 +58,11 @@ public class AbstractTreeManipulatorStrategyStrategyTest {
         assertTrue( tree.findNode( Node.of( "descendent") ).get().getParent().get().equals( Node.of( "child" ) ) );
     }
 
+
+    @Test
+    public void calculateCountOfTree() {
+        int i = manipulator.calculateCount();
+        assertEquals(3,i);
+    }
+
 }

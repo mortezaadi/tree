@@ -62,22 +62,4 @@ public class TreeTest {
         Mockito.verify( mockedManipulator ,Mockito.times( 1 )).delete( Node.of( 1 ) );
     }
 
-
-    @Test
-    public void calculateCountOfTreeWithOneElement() {
-        int i = tree.calculateCount();
-        assertEquals(1,i);
-    }
-
-    @Test
-    public void calculateCountOfTree() {
-        Tree<Integer> tree2 = new Tree<>( Node.of( 1 ));
-        tree2.insert( Node.of(1),Node.of( 2 ) );
-        tree2.insert( Node.of(1),Node.of( 3 ) );
-        tree2.insert( Node.of(1),Node.of( 4 ) );
-        tree2.insert( Node.of(4),Node.of( 5 ) );
-        tree2.insert( Node.of(5),Node.of( 6 ) );
-        int i = tree2.calculateCount();
-        assertEquals(6,i);
-    }
 }

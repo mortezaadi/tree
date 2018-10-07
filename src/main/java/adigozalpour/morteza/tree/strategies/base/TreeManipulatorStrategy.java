@@ -29,4 +29,6 @@ public interface TreeManipulatorStrategy<T> {
 
     Optional<Node<T>> find( Node<T> node);
 
+    int calculateCount();
+
 }

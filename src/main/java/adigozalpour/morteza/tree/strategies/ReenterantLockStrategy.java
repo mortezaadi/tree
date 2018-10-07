@@ -79,6 +79,15 @@ public class ReenterantLockStrategy<T> extends AbstractTreeManipulatorStrategy<T
         }finally {
             lock.writeLock().unlock();
         }
+    }
 
+    @Override
+    public int calculateCount() {
+        lock.readLock().lock();
+        try {
+            return super.calculateCount();
+        }finally {
+            lock.readLock().unlock();
+        }
     }
 }

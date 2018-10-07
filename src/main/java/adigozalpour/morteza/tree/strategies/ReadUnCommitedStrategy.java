@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ReadUnCommitedStrategy<T> extends AbstractTreeManipulatorStrategy<T> {
 
-    private AtomicInteger size = new AtomicInteger( 1);
+    private volatile int size =  1;
 
     public ReadUnCommitedStrategy( Tree tree ) {
         super( tree );
@@ -22,30 +22,30 @@ public class ReadUnCommitedStrategy<T> extends AbstractTreeManipulatorStrategy<T
 
     @Override
     public void delete( Node node ) {
-        size.decrementAndGet();
+        size--;
         try {
             super.delete( node );
         }
         catch ( Exception e ) {
-            size.incrementAndGet();
+            size++;
             throw e;
         }
     }
 
     @Override
     public void insert( Node parent, Node child ) {
-        size.incrementAndGet();
+        size++;
         try {
             super.insert( parent, child );
         }
         catch ( Exception e ) {
-            size.decrementAndGet();;
+            size--;
             throw e;
         }
     }
 
     @Override
     public int count() {
-        return size.get();
+        return size;
     }
 }

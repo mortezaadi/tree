@@ -4,6 +4,7 @@ import adigozalpour.morteza.tree.Node;
 import adigozalpour.morteza.tree.Tree;
 
 import java.util.Optional;
+import java.util.Stack;
 import java.util.function.Consumer;
 
 /**
@@ -68,5 +69,18 @@ public abstract class AbstractTreeManipulatorStrategy<T> implements TreeManipula
 
     protected void doActionOnParent( Optional<Node<T>> parent, Consumer<Node<T>> consumer ) {
         parent.ifPresentOrElse( consumer, () -> {throw new IllegalArgumentException( "Parent is not found" );});
+    }
+
+    @Override
+    public int calculateCount() {
+        Stack<Node<T>> s = new Stack<Node<T>>();
+        s.push(tree.getRoot());
+        int cnt = 0;
+        while (!s.empty()) {
+            Node<T> t = s.pop();
+            cnt++;
+            s.addAll( t.getChildren() );
+        }
+        return cnt;
     }
 }

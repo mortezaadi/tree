@@ -93,18 +93,6 @@ public class Tree<T>  {
         return manipulator.getType();
     }
 
-    public int calculateCount() {
-        Stack<Node<T>> s = new Stack<Node<T>>();
-        s.push(root);
-        int cnt = 0;
-        while (!s.empty()) {
-            Node<T> t = s.pop();
-            cnt++;
-            s.addAll( t.getChildren() );
-        }
-        return cnt;
-    }
-
     private TreeManipulatorStrategy<T> getManipulator( TreeManipulatorStrategy.Type type ) {
         TreeManipulatorStrategy<T> m = null;
         switch ( type ) {
