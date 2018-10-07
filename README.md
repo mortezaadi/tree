@@ -1,6 +1,6 @@
 Tree
 =
-This is developed by Java 11 and maven 3. to experiment with Java 11 :)
+Developed by Java 11 and maven 3, to try new Java 11 features:)
 
 Question:
 -
