@@ -1,13 +1,15 @@
-#Tree
+Tree
+=
+This is developed by Java 11 and maven 3. to experiment with Java 11 :)
 
-
-###Question:
+Question:
+-
 In a concurrent environment, one job is building (expanding) a tree data structure, where all other jobs are dumping periodically the current number of nodes. 
 Use any language or technology to solve the task.
 
 
-###Solution
-
+Solution
+=
 **Hypothesis**: 
 in order to achieve the best performance we need to know following answers.
 
@@ -37,8 +39,8 @@ and then only if the access patterns for the shared data are suitable.
 [ReentrantLock.java](https://docs.oracle.com/javase/8/docs/api/?java/util/concurrent/locks/ReentrantLock.html "Java Doc")
 
 
-###Comparing actual execution statistics
-
+Comparing actual execution statistics
+-
 To demonstrate different behaviours of these strategies. I have created a class named
 `TreeSimulator.java` This class simulates the scenario of the question. here are the result
 of running 3 different strategies where 1 thread is writing data and 5 other thread accessing
@@ -84,7 +86,8 @@ the shared data.
 ****************************************************************************************
 ```
 
-###Conclusion
+Conclusion
+-
 As you can see there without being fully `ACID` (READ_UNCOMMITTED strategy) we can gain a lot better
 performance, however with mutual exclusive lock 'SYNCHRONIZED strategy' we can be fully 'ACID' but it
 is not an optimal solution when multiple reader are accessing shared resources.
@@ -93,7 +96,8 @@ at the middle REENTRANT_LOCK strategy seems be a better solution for this questi
 and don't lock reader threads unless there is a writer thread manipulating data at the same time.
 
 
-### How to run
+How to run
+-
 to simulate the same in your machine you can follow this steps.
 
     git clone url
