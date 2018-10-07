@@ -1,6 +1,6 @@
 Tree
 =
-The goal of this project is to demonstrate how to use ReentrantReadWriteLock and mutual excluse lock to accecss shared
+The goal of this project is to demonstrate how to use [ReentrantReadWriteLock](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html) and mutual excluse lock to accecss shared
 resources.
 
 You will need Java 11 and maven 3 to run the code.
@@ -91,8 +91,8 @@ the shared data.
 
 Conclusion
 -
-As you can see there without being fully `ACID` (READ_UNCOMMITTED strategy) we can gain a lot better
-performance, however with mutual exclusive lock 'SYNCHRONIZED strategy' we can be fully 'ACID' but it
+As you can see, without being fully `ACID` (READ_UNCOMMITTED strategy) we can gain a lot better
+performance; however, with mutual exclusive lock 'SYNCHRONIZED strategy' we can be fully 'ACID' but it
 is not an optimal solution when multiple reader are accessing shared resources.
 
 at the middle REENTRANT_LOCK strategy seems be a better solution for this question. it supports 'ACID'
