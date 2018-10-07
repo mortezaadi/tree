@@ -1,6 +1,7 @@
 Tree
 =
-Developed by Java 11 and maven 3, to try new Java 11 features:)
+The goal of this project is to demonstrate how to use ReentrantReadWriteLock and mutual excluse lock to accecss shared
+resources.
 
 Question:
 -
