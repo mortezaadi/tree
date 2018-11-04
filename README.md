@@ -1,7 +1,8 @@
 Tree
 =
+
 The goal of this project is to demonstrate how to use [ReentrantReadWriteLock](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html) and mutual excluse lock to accecss shared
-resources.
+resources. IT IS TEST REPOSITORY
 
 You will need Java 11 and maven 3 to run the code.
 
